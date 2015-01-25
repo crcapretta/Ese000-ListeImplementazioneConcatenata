@@ -6,12 +6,12 @@
  * Returns the updated pointer to the first element of the list.
  */
 LLElement * LLInsertAtBeginning(LLElement * first, int key) {
-     LLElement *elemento;
-     elemento=(LLElement *)malloc(sizeof(LLElement));
-     if(elemento!=NULL){
-         elemento->next=first;
-         elemento->key=key;
-         first=elemento;
+     LLElement *nuovo;
+     nuovo=(LLElement *)malloc(sizeof(LLElement));
+     if(nuovo!=NULL){
+         nuovo->next=first;
+         nuovo->key=key;
+         first=nuovo;
      }
      return first;
 }
@@ -21,16 +21,16 @@ LLElement * LLInsertAtBeginning(LLElement * first, int key) {
  * Returns the updated pointer to the first element of the list.
  */
 LLElement * LLInsertAtEnd(LLElement * first, int key) {
-          LLElement *elemento;
+          LLElement *nuovo;
           LLElement ** temp; 
-          elemento=(LLElement*)malloc(sizeof(LLElement));
-          if(elemento!=NULL){             
+         nuovo=(LLElement*)malloc(sizeof(LLElement));
+          if(nuovo!=NULL){             
              temp=&first;
              while(*temp!=NULL)
                  temp= &(*temp)->next;
-             elemento->next=NULL;
-             elemento->key=key;
-             *temp=elemento;      
+             nuovo->next=NULL;
+             nuovo->key=key;
+             *temp=nuovo;      
           }
            return first;        
 }
@@ -43,17 +43,17 @@ LLElement * LLInsertAtEnd(LLElement * first, int key) {
  * Returns the updated pointer to the first element of the list.
  */
 LLElement * LLInsertAtPosition(LLElement * first, int key, int position) {
-     LLElement * elemento;
+     LLElement * nuovo;
      LLElement ** temp;
      int i;
-     elemento=(LLElement *)malloc(sizeof(LLElement));
-     if(elemento!=NULL){
+    nuovo=(LLElement *)malloc(sizeof(LLElement));
+     if(nuovo!=NULL){
         temp = &first;
         for(i=0; i<position; i++)
             temp = &((*temp)->next);
-        elemento->next = *temp;
-        elemento->key = key;
-        *temp = elemento;
+        nuovo->next = *temp;
+        nuovo->key = key;
+        *temp = nuovo;
      }
      return first;   
 }
